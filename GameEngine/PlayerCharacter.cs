@@ -84,7 +84,7 @@ namespace GameEngine
             {
                 "Long Bow",
                 "Short Bow",
-                "Short Sword",
+                "Short Sword"
             };
         }
 
