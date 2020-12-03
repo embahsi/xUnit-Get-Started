@@ -84,8 +84,6 @@ namespace GameEngine.Tests
         {
             PlayerCharacter sut = new PlayerCharacter();
 
-            //sut.
-
             Assert.Equal(100, sut.Health);
         }
 
