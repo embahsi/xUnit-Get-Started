@@ -78,5 +78,52 @@ namespace GameEngine.Tests
 
             Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", sut.FullName);
         }
+
+        [Fact]
+        public void StartWithDefaultHealth()
+        {
+            PlayerCharacter sut = new PlayerCharacter();
+
+            //sut.
+
+            Assert.Equal(100, sut.Health);
+        }
+
+        [Fact]
+        public void StartWithDefaultHealth_NotEqualExample()
+        {
+            PlayerCharacter sut = new PlayerCharacter();
+
+            Assert.NotEqual(0, sut.Health);
+        }
+
+        [Fact]
+        public void IncreaseHealthAfterSleeping()
+        {
+            PlayerCharacter sut = new PlayerCharacter();
+
+            sut.Sleep();
+
+            //Assert.True(sut.Health >= 101 && sut.Health <= 200);
+            Assert.InRange(sut.Health, 101, 200);
+        }
+
+        [Fact]
+        public void NotHaveNickNameByDefault()
+        {
+            PlayerCharacter sut = new PlayerCharacter();
+
+            Assert.Null(sut.Nickname);
+        }
+
+        [Fact]
+        public void NickName_NotNullExample()
+        {
+            PlayerCharacter sut = new PlayerCharacter();
+
+            sut.Nickname = "AngryBull";
+
+            Assert.NotNull(sut.Nickname);
+        }
     }
 }
